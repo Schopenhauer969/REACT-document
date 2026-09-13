@@ -1,369 +1,540 @@
-# ⚛️ React — មគ្គុទ្ទេសក៍ពេញលេញ (ចាប់ពីដំបូងដល់កម្រិតខ្ពស់)
+# ⚛️ React — Beginner to Advanced
 
-> **កម្រិត:** Beginner → Advanced | **បច្ចុប្បន្នភាព:** React 18+
+A complete React learning and reference guide from **Beginner → Intermediate → Advanced**.
 
----
-
-## 📋 តារាងមាតិកា
-
-- [១. React គឺជាអ្វី?](#១-react-គឺជាអ្វី)
-- [២. ការដំឡើង Environment](#២-ការដំឡើង-environment)
-- [៣. JSX — វាក្យសម្ព័ន្ធពិសេស](#៣-jsx--វាក្យសម្ព័ន្ធពិសេស)
-- [៤. Components](#៤-components)
-- [៥. Props](#៥-props)
-- [៦. State និង useState](#៦-state-និង-usestate)
-- [៧. Event Handling](#៧-event-handling)
-- [៨. Conditional Rendering](#៨-conditional-rendering)
-- [៩. Lists និង Keys](#៩-lists-និង-keys)
-- [១០. useEffect](#១០-useeffect)
-- [១១. useRef](#១១-useref)
-- [១២. useContext](#១២-usecontext)
-- [១៣. useReducer](#១៣-usereducer)
-- [១៤. Custom Hooks](#១៤-custom-hooks)
-- [១៥. useMemo និង useCallback](#១៥-usememo-និង-usecallback)
-- [១៦. React Router](#១៦-react-router)
-- [១៧. Fetching Data (API)](#១៧-fetching-data-api)
-- [១៨. Error Boundaries](#១៨-error-boundaries)
-- [១៩. Performance Optimization](#១៩-performance-optimization)
-- [២០. Best Practices](#២០-best-practices)
+> 🇬🇧 **English:** Learn React step by step with practical examples.
+> 🇰🇭 **ខ្មែរ:** រៀន React ពីមូលដ្ឋានរហូតដល់កម្រិត Advanced ជាមួយ code ដែលអាចយកទៅប្រើបានពិតប្រាកដ។
 
 ---
 
-## ១. React គឺជាអ្វី?
+## 📚 Table of Contents
 
-**React** គឺជា JavaScript Library ដែលបង្កើតដោយ **Meta (Facebook)** សម្រាប់សង់ User Interface (UI) ។
-
-### 🎯 ហេតុអ្វីត្រូវប្រើ React?
-
-| លក្ខណៈ | ការពន្យល់ |
-|--------|-----------|
-| **Component-Based** | បែងចែក UI ជាផ្នែកៗតូចៗ ដើម្បីងាយ reuse |
-| **Virtual DOM** | Render លឿនជាងធម្មតាដោយប្រើ Virtual DOM |
-| **Declarative** | សរសេរ code ដោយប្រាប់ *"អ្វី"* ដែលចង់បង្ហាញ មិនមែន *"យ៉ាងដូចម្តេច"* |
-| **One-way Data Flow** | Data ហូរពី Parent → Child ធ្វើឱ្យ debug ងាយ |
-| **Large Ecosystem** | Community ធំ, libraries ច្រើន |
+* [1. What is React?](#1-what-is-react)
+* [2. Why Learn React?](#2-why-learn-react)
+* [3. React Requirements](#3-react-requirements)
+* [4. Create a React Project](#4-create-a-react-project)
+* [5. Project Structure](#5-project-structure)
+* [6. Your First React Component](#6-your-first-react-component)
+* [7. JSX](#7-jsx)
+* [8. Components](#8-components)
+* [9. Props](#9-props)
+* [10. State](#10-state)
+* [11. Events](#11-events)
+* [12. Conditional Rendering](#12-conditional-rendering)
+* [13. Rendering Lists](#13-rendering-lists)
+* [14. Forms](#14-forms)
+* [15. useEffect](#15-useeffect)
+* [16. Fetching API Data](#16-fetching-api-data)
+* [17. Loading and Error States](#17-loading-and-error-states)
+* [18. useRef](#18-useref)
+* [19. useMemo](#19-usememo)
+* [20. useCallback](#20-usecallback)
+* [21. Custom Hooks](#21-custom-hooks)
+* [22. Context API](#22-context-api)
+* [23. useReducer](#23-usereducer)
+* [24. React Router](#24-react-router)
+* [25. Authentication Example](#25-authentication-example)
+* [26. Local Storage](#26-local-storage)
+* [27. TypeScript with React](#27-typescript-with-react)
+* [28. Error Handling](#28-error-handling)
+* [29. Performance Optimization](#29-performance-optimization)
+* [30. Lazy Loading](#30-lazy-loading)
+* [31. Suspense](#31-suspense)
+* [32. React.memo](#32-reactmemo)
+* [33. Component Architecture](#33-component-architecture)
+* [34. Advanced Project Structure](#34-advanced-project-structure)
+* [35. Environment Variables](#35-environment-variables)
+* [36. Security](#36-security)
+* [37. Testing](#37-testing)
+* [38. Production Build](#38-production-build)
+* [39. Best Practices](#39-best-practices)
+* [40. Complete React Example](#40-complete-react-example)
+* [41. Learning Roadmap](#41-learning-roadmap)
 
 ---
 
-## ២. ការដំឡើង Environment
+# 1. What is React?
 
-### 📦 វិធីទី១ — Create React App (CRA)
+## 🇬🇧 English
 
-```bash
-# ដំឡើង Node.js មុន (https://nodejs.org)
-node --version   # v18+ ត្រូវការ
+React is a JavaScript library for building user interfaces.
 
-# បង្កើត project ថ្មី
-npx create-react-app my-app
+React is commonly used to create:
 
-# ចូលទៅក្នុង folder
-cd my-app
+* Websites
+* Dashboards
+* Admin panels
+* E-commerce applications
+* Social applications
+* Single Page Applications
+* Interactive web applications
 
-# រត់ development server
-npm start
+React applications are built using **components**.
+
+## 🇰🇭 ខ្មែរ
+
+React គឺជា JavaScript library សម្រាប់បង្កើត **User Interface (UI)**។
+
+React អាចប្រើសម្រាប់បង្កើត៖
+
+* Website
+* Dashboard
+* Admin Panel
+* E-commerce
+* Social Media Application
+* Single Page Application
+* Web Application ដែលមាន interaction ខ្ពស់
+
+React ប្រើ **Component** ជាផ្នែកសំខាន់ក្នុងការបង្កើត UI។
+
+---
+
+# 2. Why Learn React?
+
+## 🇬🇧 English
+
+React provides:
+
+* Component-based architecture
+* Reusable UI
+* State management
+* Event handling
+* Fast UI updates
+* Large ecosystem
+* Strong community
+* Easy integration with APIs
+
+## 🇰🇭 ខ្មែរ
+
+React មានអត្ថប្រយោជន៍៖
+
+* បែងចែក UI ជា Component
+* អាចប្រើ Component ម្តងហើយម្តងទៀត
+* គ្រប់គ្រង State
+* Handle Events
+* Update UI បានលឿន
+* Ecosystem ធំ
+* Community ធំ
+* ងាយភ្ជាប់ API
+
+---
+
+# 3. React Requirements
+
+Before learning React, you should know:
+
+```text
+HTML
+CSS
+JavaScript
+ES6+
+DOM
+Promises
+Async/Await
+Fetch API
+Modules
 ```
 
-### ⚡ វិធីទី២ — Vite (ណែនាំ — លឿនជាង)
+## Recommended knowledge
+
+```text
+JavaScript Variables
+Functions
+Arrays
+Objects
+Destructuring
+Spread Operator
+Map
+Filter
+Reduce
+Arrow Functions
+Modules
+Promises
+Async/Await
+```
+
+---
+
+# 4. Create a React Project
+
+The recommended modern approach is to use a modern React build tool such as Vite.
+
+## Create project
 
 ```bash
-# បង្កើត project ជាមួយ Vite
-npm create vite@latest my-app -- --template react
+npm create vite@latest my-react-app
+```
 
-cd my-app
+Select:
+
+```text
+Framework: React
+Variant: JavaScript
+```
+
+Then:
+
+```bash
+cd my-react-app
 npm install
 npm run dev
 ```
 
-### 📁 Structure នៃ Project
+Your development server will start.
 
+---
+
+## TypeScript
+
+You can also create a TypeScript project:
+
+```bash
+npm create vite@latest my-react-app
 ```
-my-app/
+
+Select:
+
+```text
+Framework: React
+Variant: TypeScript
+```
+
+Then:
+
+```bash
+cd my-react-app
+npm install
+npm run dev
+```
+
+---
+
+# 5. Project Structure
+
+A basic project can look like:
+
+```text
+my-react-app/
+│
 ├── public/
-│   └── index.html          ← HTML template
+│
 ├── src/
-│   ├── App.jsx             ← Component ចម្បង
-│   ├── main.jsx            ← Entry point
-│   └── index.css           ← Global styles
+│   ├── assets/
+│   ├── components/
+│   ├── pages/
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+│
+├── .gitignore
+├── index.html
 ├── package.json
 └── vite.config.js
 ```
 
----
+## 🇰🇭 ខ្មែរ
 
-## ៣. JSX — វាក្យសម្ព័ន្ធពិសេស
-
-**JSX** (JavaScript XML) អនុញ្ញាតឱ្យសរសេរ HTML នៅក្នុង JavaScript ។
-
-### ✅ ច្បាប់ JSX សំខាន់ៗ
-
-```jsx
-// ✅ ត្រឹមត្រូវ — ត្រូវ return element តែ១
-function App() {
-  return (
-    <div>
-      <h1>សួស្តី React!</h1>
-      <p>នេះគឺជា JSX</p>
-    </div>
-  );
-}
-
-// ✅ ប្រើ Fragment ប្រសិនបើមិនចង់ wrapper div
-function App() {
-  return (
-    <>
-      <h1>សួស្តី!</h1>
-      <p>React Fragment</p>
-    </>
-  );
-}
-```
-
-### 🔤 ភាពខុសគ្នា JSX vs HTML
-
-```jsx
-// HTML                         JSX
-// class="box"          →      className="box"
-// for="name"           →      htmlFor="name"
-// <br>                 →      <br />
-// onclick="fn()"       →      onClick={fn}
-// style="color:red"    →      style={{ color: 'red' }}
-
-function Example() {
-  return (
-    <div className="box" style={{ color: 'red', fontSize: 16 }}>
-      <label htmlFor="name">ឈ្មោះ</label>
-      <input id="name" type="text" />
-      <br />
-    </div>
-  );
-}
-```
-
-### 🔧 JavaScript Expression ក្នុង JSX
-
-```jsx
-function Greeting() {
-  const name = "សុខា";
-  const age = 25;
-  const isLoggedIn = true;
-
-  return (
-    <div>
-      {/* ប្រើ {} ដើម្បីបញ្ចូល JavaScript */}
-      <h1>សួស្តី, {name}!</h1>
-      <p>អាយុ: {age} ឆ្នាំ</p>
-      <p>ស្ថានភាព: {isLoggedIn ? "បានចូល" : "មិនទាន់ចូល"}</p>
-      <p>គណនា: {age * 2}</p>
-    </div>
-  );
-}
-```
+* `public/` → ឯកសារ static
+* `src/` → source code សំខាន់
+* `components/` → reusable components
+* `pages/` → pages
+* `App.jsx` → root component
+* `main.jsx` → application entry point
+* `index.css` → global CSS
 
 ---
 
-## ៤. Components
+# 6. Your First React Component
 
-**Component** គឺជា JavaScript function ដែល return JSX ។
+Create:
 
-### 🏗️ Function Component (ណែនាំ)
-
-```jsx
-// Component ធម្មតា
-function Welcome() {
-  return <h1>សួស្តីមកកាន់ React!</h1>;
-}
-
-// Arrow Function Component
-const Welcome = () => {
-  return <h1>សួស្តីមកកាន់ React!</h1>;
-};
-
-// Arrow Function ខ្លី (implicit return)
-const Welcome = () => <h1>សួស្តីមកកាន់ React!</h1>;
+```text
+src/App.jsx
 ```
 
-### 📐 ការរៀបចំ Component ឱ្យបានត្រឹមត្រូវ
-
 ```jsx
-// ✅ ល្អ — ឈ្មោះ Component ចាប់ផ្តើមដោយអក្សរធំ (PascalCase)
-function UserCard() {
-  return (
-    <div className="card">
-      <h2>ព័ត៌មានអ្នកប្រើ</h2>
-    </div>
-  );
-}
-
-// ✅ ល្អ — Export component
-export default UserCard;
-
-// នៅក្នុង App.jsx
-import UserCard from './UserCard';
-
 function App() {
   return (
     <div>
-      <UserCard />   {/* ប្រើ Component ដូចជា HTML tag */}
-      <UserCard />   {/* Reuse បានជាច្រើនដង */}
+      <h1>Hello React</h1>
+      <p>My first React application.</p>
     </div>
   );
 }
+
+export default App;
 ```
 
-### 🗂️ Component Composition
+## 🇬🇧 English
+
+A React component is usually a JavaScript function that returns JSX.
+
+## 🇰🇭 ខ្មែរ
+
+React Component ជាទូទៅគឺជា JavaScript function ដែល return JSX។
+
+---
+
+# 7. JSX
+
+JSX allows us to write HTML-like syntax inside JavaScript.
 
 ```jsx
-// Header Component
+function App() {
+  const name = "Heng";
+
+  return (
+    <div>
+      <h1>Hello {name}</h1>
+      <p>Welcome to React.</p>
+    </div>
+  );
+}
+
+export default App;
+```
+
+The expression:
+
+```jsx
+{name}
+```
+
+inserts JavaScript data into JSX.
+
+---
+
+## JavaScript expression
+
+```jsx
+function App() {
+  const age = 20;
+
+  return (
+    <div>
+      <h1>Age: {age}</h1>
+      <p>Next year: {age + 1}</p>
+    </div>
+  );
+}
+
+export default App;
+```
+
+---
+
+## JSX className
+
+Use:
+
+```jsx
+className
+```
+
+instead of:
+
+```html
+class
+```
+
+Example:
+
+```jsx
+function App() {
+  return (
+    <div className="container">
+      <h1>Hello React</h1>
+    </div>
+  );
+}
+
+export default App;
+```
+
+---
+
+# 8. Components
+
+Components allow us to split the application into reusable pieces.
+
+## Header.jsx
+
+```jsx
 function Header() {
   return (
     <header>
-      <nav>
-        <Logo />
-        <Navigation />
-      </nav>
+      <h1>My Website</h1>
     </header>
   );
 }
 
-// Logo Component
-function Logo() {
-  return <img src="/logo.png" alt="Logo" />;
-}
+export default Header;
+```
 
-// Navigation Component
-function Navigation() {
+## App.jsx
+
+```jsx
+import Header from "./Header";
+
+function App() {
   return (
-    <ul>
-      <li>ទំព័រដើម</li>
-      <li>អំពីយើង</li>
-      <li>ទំនាក់ទំនង</li>
-    </ul>
+    <div>
+      <Header />
+
+      <main>
+        <h2>Home Page</h2>
+      </main>
+    </div>
   );
 }
+
+export default App;
 ```
 
 ---
 
-## ៥. Props
+# 9. Props
 
-**Props** (Properties) ជា parameter ដែលបញ្ជូន data ពី Parent Component ទៅ Child Component ។
+Props allow a parent component to send data to a child component.
 
-### 📨 ការប្រើ Props មូលដ្ឋាន
+## User.jsx
 
 ```jsx
-// Child Component — ទទួល props
-function Greeting({ name, age }) {
+function User({ name, age }) {
   return (
     <div>
-      <h1>សួស្តី, {name}!</h1>
-      <p>អាយុ: {age} ឆ្នាំ</p>
+      <h2>Name: {name}</h2>
+      <p>Age: {age}</p>
     </div>
   );
 }
 
-// Parent Component — ផ្ញើ props
+export default User;
+```
+
+## App.jsx
+
+```jsx
+import User from "./User";
+
 function App() {
   return (
     <div>
-      <Greeting name="សុខា" age={25} />
-      <Greeting name="ចន្ទ" age={30} />
-    </div>
-  );
-}
-```
-
-### 🎁 Props Types ផ្សេងៗ
-
-```jsx
-function UserProfile({
-  name,           // string
-  age,            // number
-  isActive,       // boolean
-  hobbies,        // array
-  address,        // object
-  onClick,        // function
-  children,       // JSX content
-}) {
-  return (
-    <div>
-      <h2>{name}</h2>
-      <p>អាយុ: {age}</p>
-      <p>ស្ថានភាព: {isActive ? "✅ សកម្ម" : "❌ អសកម្ម"}</p>
-      <ul>
-        {hobbies.map((hobby, i) => <li key={i}>{hobby}</li>)}
-      </ul>
-      <p>ក្រុង: {address.city}</p>
-      <button onClick={onClick}>ចុច</button>
-      {children}  {/* JSX children */}
+      <User name="Heng" age={20} />
+      <User name="Dara" age={25} />
     </div>
   );
 }
 
-// ការប្រើ
-function App() {
-  return (
-    <UserProfile
-      name="ដារ៉ា"
-      age={28}
-      isActive={true}
-      hobbies={["អានសៀវភៅ", "លេងកីឡា"]}
-      address={{ city: "ភ្នំពេញ", country: "កម្ពុជា" }}
-      onClick={() => alert("ចុចហើយ!")}
-    >
-      <p>នេះគឺ children content</p>
-    </UserProfile>
-  );
-}
+export default App;
 ```
 
-### 🛡️ Default Props
+## 🇰🇭 ខ្មែរ
 
-```jsx
-function Button({ text = "ចុច", color = "blue", size = "medium" }) {
-  return (
-    <button
-      className={`btn btn-${color} btn-${size}`}
-    >
-      {text}
-    </button>
-  );
-}
+`props` គឺជា data ដែល Parent Component ផ្ញើទៅ Child Component។
 
-// ប្រើដោយមិនបញ្ជាក់ props — នឹងប្រើ default
-<Button />                        // text="ចុច", color="blue", size="medium"
-<Button text="រក្សាទុក" color="green" />   // override ផ្នែក
+```text
+Parent
+   ↓
+Props
+   ↓
+Child
 ```
 
 ---
 
-## ៦. State និង useState
+# 10. State
 
-**State** ជា data ដែលប្រែប្រួលបាន នៅពេល user interact ។ ពេល state ផ្លាស់ប្តូរ, React **re-render** component ។
+State stores data that can change during the lifetime of a component.
 
-### 🔄 useState មូលដ្ឋាន
+Use:
 
 ```jsx
-import { useState } from 'react';
+useState
+```
 
-function Counter() {
-  // useState(initialValue) → [currentValue, setterFunction]
+Example:
+
+```jsx
+import { useState } from "react";
+
+function App() {
   const [count, setCount] = useState(0);
 
   return (
     <div>
-      <h2>រាប់: {count}</h2>
-      <button onClick={() => setCount(count + 1)}>➕ បន្ថែម</button>
-      <button onClick={() => setCount(count - 1)}>➖ ដកចេញ</button>
-      <button onClick={() => setCount(0)}>🔄 Reset</button>
+      <h1>Count: {count}</h1>
+
+      <button onClick={() => setCount(count + 1)}>
+        Increase
+      </button>
     </div>
   );
 }
+
+export default App;
 ```
 
-### 📝 State ជាមួយ String
+## Explanation
 
 ```jsx
-function NameInput() {
+const [count, setCount] = useState(0);
+```
+
+Means:
+
+```text
+count     = current value
+setCount  = function to update value
+0         = initial value
+```
+
+## ខ្មែរ
+
+`useState` ប្រើសម្រាប់រក្សាទុក data ដែលអាចផ្លាស់ប្តូរ។
+
+---
+
+# 11. Events
+
+React supports events such as:
+
+```text
+onClick
+onChange
+onSubmit
+onMouseEnter
+onMouseLeave
+onKeyDown
+onKeyUp
+```
+
+Example:
+
+```jsx
+function App() {
+  function handleClick() {
+    alert("Button clicked!");
+  }
+
+  return (
+    <button onClick={handleClick}>
+      Click Me
+    </button>
+  );
+}
+
+export default App;
+```
+
+---
+
+## Input event
+
+```jsx
+import { useState } from "react";
+
+function App() {
   const [name, setName] = useState("");
 
   return (
@@ -371,785 +542,689 @@ function NameInput() {
       <input
         type="text"
         value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder="បញ្ចូលឈ្មោះ..."
+        onChange={(event) => setName(event.target.value)}
+        placeholder="Enter your name"
       />
-      <p>ឈ្មោះ: {name || "នៅទទេ"}</p>
-      <p>ប្រវែង: {name.length} តួអក្សរ</p>
+
+      <h2>Hello {name}</h2>
     </div>
   );
 }
-```
 
-### 🗃️ State ជាមួយ Object
-
-```jsx
-function UserForm() {
-  const [user, setUser] = useState({
-    name: "",
-    email: "",
-    age: 0,
-  });
-
-  // ✅ ល្អ — Spread ដើម្បីរក្សា fields ផ្សេង
-  const updateField = (field, value) => {
-    setUser(prev => ({ ...prev, [field]: value }));
-  };
-
-  return (
-    <form>
-      <input
-        value={user.name}
-        onChange={(e) => updateField('name', e.target.value)}
-        placeholder="ឈ្មោះ"
-      />
-      <input
-        value={user.email}
-        onChange={(e) => updateField('email', e.target.value)}
-        placeholder="អ៊ីមែល"
-      />
-      <p>ព័ត៌មាន: {user.name} ({user.email})</p>
-    </form>
-  );
-}
-```
-
-### 📋 State ជាមួយ Array
-
-```jsx
-function TodoList() {
-  const [todos, setTodos] = useState([]);
-  const [input, setInput] = useState("");
-
-  // ✅ បន្ថែម item
-  const addTodo = () => {
-    if (!input.trim()) return;
-    setTodos(prev => [...prev, { id: Date.now(), text: input, done: false }]);
-    setInput("");
-  };
-
-  // ✅ លុប item
-  const removeTodo = (id) => {
-    setTodos(prev => prev.filter(todo => todo.id !== id));
-  };
-
-  // ✅ Toggle done
-  const toggleTodo = (id) => {
-    setTodos(prev =>
-      prev.map(todo =>
-        todo.id === id ? { ...todo, done: !todo.done } : todo
-      )
-    );
-  };
-
-  return (
-    <div>
-      <input
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder="បន្ថែមការងារ..."
-      />
-      <button onClick={addTodo}>បន្ថែម</button>
-
-      <ul>
-        {todos.map(todo => (
-          <li key={todo.id}>
-            <span
-              style={{ textDecoration: todo.done ? 'line-through' : 'none' }}
-              onClick={() => toggleTodo(todo.id)}
-            >
-              {todo.text}
-            </span>
-            <button onClick={() => removeTodo(todo.id)}>🗑️</button>
-          </li>
-        ))}
-      </ul>
-
-      <p>សរុប: {todos.length} | រួចរាល់: {todos.filter(t => t.done).length}</p>
-    </div>
-  );
-}
+export default App;
 ```
 
 ---
 
-## ៧. Event Handling
+# 12. Conditional Rendering
 
-React ប្រើ **Synthetic Events** ដែលមានដំណើរការដូចគ្នានៅគ្រប់ browser ។
+You can display different UI depending on state.
+
+## Ternary
 
 ```jsx
-function EventExamples() {
-  // onClick
-  const handleClick = () => alert("ចុចហើយ!");
-
-  // onChange
-  const handleChange = (e) => console.log(e.target.value);
-
-  // onSubmit
-  const handleSubmit = (e) => {
-    e.preventDefault(); // ⛔ រារាំង browser reload
-    console.log("Form submitted");
-  };
-
-  // onMouseEnter / onMouseLeave
-  const handleHover = () => console.log("Mouse hover!");
-
-  // onKeyDown
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter') console.log("Enter pressed");
-  };
+function App() {
+  const isLoggedIn = true;
 
   return (
     <div>
-      <button onClick={handleClick}>Click</button>
-      <button onClick={() => alert("Inline!")}>Inline Click</button>
-
-      <input onChange={handleChange} onKeyDown={handleKeyDown} />
-
-      <form onSubmit={handleSubmit}>
-        <button type="submit">Submit</button>
-      </form>
-
-      <div onMouseEnter={handleHover}>Hover me</div>
-    </div>
-  );
-}
-```
-
-### 🎯 ការបញ្ជូន Argument ទៅ Event Handler
-
-```jsx
-function ItemList() {
-  const items = ["ផ្លែប៉ោម", "ផ្លែចេក", "ផ្លែក្រូច"];
-
-  const handleDelete = (itemName) => {
-    alert(`លុប: ${itemName}`);
-  };
-
-  return (
-    <ul>
-      {items.map((item) => (
-        <li key={item}>
-          {item}
-          {/* ✅ ប្រើ arrow function ដើម្បីបញ្ជូន argument */}
-          <button onClick={() => handleDelete(item)}>លុប</button>
-        </li>
-      ))}
-    </ul>
-  );
-}
-```
-
----
-
-## ៨. Conditional Rendering
-
-```jsx
-function Dashboard({ isLoggedIn, userRole, notifications }) {
-  // វិធី ១ — if/else statement
-  if (!isLoggedIn) {
-    return <LoginPage />;
-  }
-
-  return (
-    <div>
-      {/* វិធី ២ — Ternary operator */}
-      <h1>{isLoggedIn ? "សួស្តីមកវិញ!" : "សូមចូល"}</h1>
-
-      {/* វិធី ៣ — && operator (render ប្រសិនបើ true) */}
-      {notifications > 0 && (
-        <span className="badge">{notifications}</span>
+      {isLoggedIn ? (
+        <h1>Welcome back!</h1>
+      ) : (
+        <h1>Please login.</h1>
       )}
-
-      {/* វិធី ៤ — Nested ternary (កុំប្រើច្រើន) */}
-      <p>
-        {userRole === 'admin'
-          ? "👑 អ្នកគ្រប់គ្រង"
-          : userRole === 'editor'
-          ? "✏️ អ្នកកែ"
-          : "👤 អ្នកប្រើ"}
-      </p>
-
-      {/* វិធី ៥ — Switch ជាមួយ helper function */}
-      {renderRoleBadge(userRole)}
     </div>
   );
 }
 
-// ✅ Helper function ច្បាស់ជាង nested ternary
-function renderRoleBadge(role) {
-  switch (role) {
-    case 'admin':   return <span className="badge-admin">Admin</span>;
-    case 'editor':  return <span className="badge-editor">Editor</span>;
-    default:        return <span className="badge-user">User</span>;
-  }
-}
+export default App;
 ```
 
 ---
 
-## ៩. Lists និង Keys
+## && operator
 
 ```jsx
-function ProductList() {
-  const products = [
-    { id: 1, name: "កាហ្វេ", price: 2000, inStock: true },
-    { id: 2, name: "តែ", price: 1500, inStock: false },
-    { id: 3, name: "ទឹកផ្លែឈើ", price: 2500, inStock: true },
+function App() {
+  const isAdmin = true;
+
+  return (
+    <div>
+      {isAdmin && <button>Admin Panel</button>}
+    </div>
+  );
+}
+
+export default App;
+```
+
+---
+
+# 13. Rendering Lists
+
+Use `map()` to render arrays.
+
+```jsx
+function App() {
+  const users = [
+    { id: 1, name: "Heng" },
+    { id: 2, name: "Dara" },
+    { id: 3, name: "Sokha" },
   ];
 
   return (
-    <ul>
-      {products.map((product) => (
-        // ✅ key ត្រូវតែ unique ហើយ stable (ប្រើ id, មិនមែន index)
-        <li key={product.id}>
-          <strong>{product.name}</strong> — {product.price}រៀល
-          {product.inStock
-            ? <span style={{ color: 'green' }}> ✅ មានស្ត็រ</span>
-            : <span style={{ color: 'red' }}> ❌ អស់ស្ត็រ</span>
-          }
-        </li>
-      ))}
-    </ul>
+    <div>
+      <h1>Users</h1>
+
+      <ul>
+        {users.map((user) => (
+          <li key={user.id}>
+            {user.name}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
+
+export default App;
 ```
 
-### ⚠️ ហេតុអ្វីត្រូវប្រើ key?
+## Important
+
+Always provide a stable `key`.
+
+Good:
 
 ```jsx
-// ❌ មិនល្អ — ប្រើ index ជា key (problem ពេល reorder/delete)
-{items.map((item, index) => <li key={index}>{item}</li>)}
+key={user.id}
+```
 
-// ✅ ល្អ — ប្រើ unique ID
-{items.map((item) => <li key={item.id}>{item.name}</li>)}
+Avoid using array index when a stable ID exists.
 
-// ✅ ល្អ — ប្រើ string unique ប្រសិនបើគ្មាន id
-{items.map((item) => <li key={item.slug}>{item.name}</li>)}
+---
+
+# 14. Forms
+
+React commonly uses controlled inputs.
+
+```jsx
+import { useState } from "react";
+
+function App() {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+  });
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+
+    setForm((previous) => ({
+      ...previous,
+      [name]: value,
+    }));
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    console.log(form);
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        name="name"
+        value={form.name}
+        onChange={handleChange}
+        placeholder="Name"
+      />
+
+      <input
+        name="email"
+        type="email"
+        value={form.email}
+        onChange={handleChange}
+        placeholder="Email"
+      />
+
+      <button type="submit">
+        Submit
+      </button>
+    </form>
+  );
+}
+
+export default App;
 ```
 
 ---
 
-## ១០. useEffect
+# 15. useEffect
 
-**useEffect** ជា Hook ដើម្បីដំណើរការ **side effects**: fetch data, subscriptions, timer, DOM manipulation ។
+`useEffect` is used for side effects.
 
-### 🕐 Dependency Array
+Common examples:
+
+* API requests
+* Event listeners
+* Timers
+* Synchronizing with external systems
+
+Example:
 
 ```jsx
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from "react";
 
-function Examples() {
+function App() {
   const [count, setCount] = useState(0);
-  const [userId, setUserId] = useState(1);
 
-  // ▶️ រត់ ពេលដំបូង និងគ្រប់ re-render
   useEffect(() => {
-    console.log("render ម្តងៗ");
-  }); // គ្មាន dependency array
-
-  // ▶️ រត់ ម្តងប៉ុណ្ណោះ (component mount)
-  useEffect(() => {
-    console.log("mount ម្តង");
-  }, []); // array ទទេ
-
-  // ▶️ រត់ ពេល count ផ្លាស់ប្តូរ
-  useEffect(() => {
-    console.log("count: ", count);
+    document.title = `Count: ${count}`;
   }, [count]);
 
-  // ▶️ Cleanup function (unmount ឬ dependency ផ្លាស់ប្តូរ)
-  useEffect(() => {
-    const timer = setInterval(() => {
-      console.log("tick");
-    }, 1000);
+  return (
+    <div>
+      <h1>{count}</h1>
 
-    return () => clearInterval(timer); // ✅ Cleanup
-  }, []);
+      <button onClick={() => setCount(count + 1)}>
+        Increase
+      </button>
+    </div>
+  );
 }
+
+export default App;
 ```
 
-### 🌐 Fetch Data ជាមួយ useEffect
+The dependency:
 
 ```jsx
-function UserProfile({ userId }) {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+[count]
+```
+
+means the effect runs when `count` changes.
+
+---
+
+# 16. Fetching API Data
+
+Example using the browser `fetch()` API:
+
+```jsx
+import { useEffect, useState } from "react";
+
+function App() {
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    // ✅ abort controller ដើម្បីបញ្ឈប់ request ចាស់
-    const controller = new AbortController();
+    async function loadUsers() {
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/users"
+      );
 
-    const fetchUser = async () => {
+      const data = await response.json();
+
+      setUsers(data);
+    }
+
+    loadUsers();
+  }, []);
+
+  return (
+    <div>
+      <h1>Users</h1>
+
+      {users.map((user) => (
+        <div key={user.id}>
+          <h2>{user.name}</h2>
+          <p>{user.email}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default App;
+```
+
+---
+
+# 17. Loading and Error States
+
+A production application should handle:
+
+```text
+Loading
+Success
+Error
+Empty
+```
+
+Example:
+
+```jsx
+import { useEffect, useState } from "react";
+
+function App() {
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    async function loadUsers() {
       try {
         setLoading(true);
-        setError(null);
+        setError("");
 
-        const res = await fetch(
-          `https://jsonplaceholder.typicode.com/users/${userId}`,
-          { signal: controller.signal }
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/users"
         );
 
-        if (!res.ok) throw new Error("មិនអាច load ទិន្នន័យ");
-
-        const data = await res.json();
-        setUser(data);
-      } catch (err) {
-        if (err.name !== 'AbortError') {
-          setError(err.message);
+        if (!response.ok) {
+          throw new Error("Failed to load users.");
         }
+
+        const data = await response.json();
+
+        setUsers(data);
+      } catch (error) {
+        setError(error.message);
       } finally {
         setLoading(false);
       }
-    };
+    }
 
-    fetchUser();
+    loadUsers();
+  }, []);
 
-    return () => controller.abort(); // ✅ Cleanup
-  }, [userId]); // re-fetch ពេល userId ផ្លាស់ប្តូរ
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
 
-  if (loading) return <p>⏳ កំពុង Load...</p>;
-  if (error)   return <p>❌ Error: {error}</p>;
-  if (!user)   return null;
+  if (error) {
+    return <h1>Error: {error}</h1>;
+  }
+
+  if (users.length === 0) {
+    return <h1>No users found.</h1>;
+  }
 
   return (
     <div>
-      <h2>{user.name}</h2>
-      <p>📧 {user.email}</p>
-      <p>📞 {user.phone}</p>
+      <h1>Users</h1>
+
+      {users.map((user) => (
+        <article key={user.id}>
+          <h2>{user.name}</h2>
+          <p>{user.email}</p>
+        </article>
+      ))}
     </div>
   );
 }
+
+export default App;
 ```
 
 ---
 
-## ១១. useRef
+# 18. useRef
 
-**useRef** ប្រើសម្រាប់: ១) access DOM element ២) រក្សា mutable value ដោយមិន re-render ។
+`useRef` stores a mutable value without causing a re-render.
+
+It is also commonly used to access DOM elements.
 
 ```jsx
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from "react";
 
-function RefExamples() {
-  // ១. DOM Access
+function App() {
   const inputRef = useRef(null);
 
-  const focusInput = () => {
-    inputRef.current.focus(); // focus input element
-  };
-
-  const clearInput = () => {
-    inputRef.current.value = ""; // ផ្លាស់ប្ដូរ DOM ដោយផ្ទាល់
-    inputRef.current.focus();
-  };
-
-  // ២. Mutable Value (មិន trigger re-render)
-  const renderCount = useRef(0);
-  const [state, setState] = useState(0);
-
-  useEffect(() => {
-    renderCount.current += 1;
-    console.log(`Render #${renderCount.current}`);
-  });
-
-  // ៣. Store previous value
-  const prevState = useRef(state);
-  useEffect(() => {
-    prevState.current = state;
-  }, [state]);
+  function focusInput() {
+    inputRef.current?.focus();
+  }
 
   return (
     <div>
-      <input ref={inputRef} type="text" placeholder="ជ្រើសរើស..." />
-      <button onClick={focusInput}>Focus</button>
-      <button onClick={clearInput}>Clear</button>
+      <input
+        ref={inputRef}
+        placeholder="Enter something"
+      />
 
-      <p>State: {state} | មុន: {prevState.current}</p>
-      <button onClick={() => setState(s => s + 1)}>Update State</button>
-      <p>Renders: {renderCount.current}</p>
+      <button onClick={focusInput}>
+        Focus Input
+      </button>
     </div>
   );
 }
+
+export default App;
 ```
 
 ---
 
-## ១២. useContext
+# 19. useMemo
 
-**useContext** ដោះស្រាយបញ្ហា **Prop Drilling** ដោយប្រើ global state ។
+`useMemo` can cache the result of an expensive calculation.
 
 ```jsx
-import { createContext, useContext, useState } from 'react';
+import { useMemo, useState } from "react";
 
-// ១. បង្កើត Context
-const ThemeContext = createContext(null);
+function App() {
+  const [number, setNumber] = useState(10);
+  const [name, setName] = useState("");
 
-// ២. បង្កើត Provider
-function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState('light');
-
-  const toggleTheme = () => {
-    setTheme(prev => prev === 'light' ? 'dark' : 'light');
-  };
+  const doubled = useMemo(() => {
+    return number * 2;
+  }, [number]);
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <div>
+      <input
+        value={name}
+        onChange={(event) => setName(event.target.value)}
+        placeholder="Name"
+      />
+
+      <h2>Number: {number}</h2>
+      <h2>Doubled: {doubled}</h2>
+
+      <button onClick={() => setNumber(number + 1)}>
+        Increase
+      </button>
+    </div>
+  );
+}
+
+export default App;
+```
+
+## Important
+
+Do not use `useMemo` everywhere.
+
+Use it when memoization actually provides a benefit.
+
+---
+
+# 20. useCallback
+
+`useCallback` caches a function reference.
+
+```jsx
+import { useCallback, useState } from "react";
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  const handleClick = useCallback(() => {
+    console.log("Clicked");
+  }, []);
+
+  return (
+    <div>
+      <h1>{count}</h1>
+
+      <button onClick={() => setCount(count + 1)}>
+        Increase
+      </button>
+
+      <button onClick={handleClick}>
+        Log
+      </button>
+    </div>
+  );
+}
+
+export default App;
+```
+
+`useCallback` is most useful when passing callbacks to memoized child components or when function identity matters.
+
+---
+
+# 21. Custom Hooks
+
+Custom hooks allow you to reuse stateful logic.
+
+Create:
+
+```text
+src/hooks/useCounter.js
+```
+
+```jsx
+import { useState } from "react";
+
+export function useCounter(initialValue = 0) {
+  const [count, setCount] = useState(initialValue);
+
+  function increment() {
+    setCount((value) => value + 1);
+  }
+
+  function decrement() {
+    setCount((value) => value - 1);
+  }
+
+  function reset() {
+    setCount(initialValue);
+  }
+
+  return {
+    count,
+    increment,
+    decrement,
+    reset,
+  };
+}
+```
+
+Use it:
+
+```jsx
+import { useCounter } from "./hooks/useCounter";
+
+function App() {
+  const {
+    count,
+    increment,
+    decrement,
+    reset,
+  } = useCounter(10);
+
+  return (
+    <div>
+      <h1>{count}</h1>
+
+      <button onClick={increment}>
+        +
+      </button>
+
+      <button onClick={decrement}>
+        -
+      </button>
+
+      <button onClick={reset}>
+        Reset
+      </button>
+    </div>
+  );
+}
+
+export default App;
+```
+
+---
+
+# 22. Context API
+
+Context allows data to be shared without passing props through every level.
+
+## ThemeContext.jsx
+
+```jsx
+import { createContext, useContext, useState } from "react";
+
+const ThemeContext = createContext(null);
+
+export function ThemeProvider({ children }) {
+  const [theme, setTheme] = useState("light");
+
+  function toggleTheme() {
+    setTheme((current) =>
+      current === "light" ? "dark" : "light"
+    );
+  }
+
+  return (
+    <ThemeContext.Provider
+      value={{
+        theme,
+        toggleTheme,
+      }}
+    >
       {children}
     </ThemeContext.Provider>
   );
 }
 
-// ✅ Custom hook ដើម្បីងាយប្រើ
-function useTheme() {
+export function useTheme() {
   const context = useContext(ThemeContext);
-  if (!context) throw new Error("useTheme ត្រូវប្រើនៅក្នុង ThemeProvider");
+
+  if (!context) {
+    throw new Error(
+      "useTheme must be used inside ThemeProvider"
+    );
+  }
+
   return context;
 }
+```
 
-// ៣. ប្រើ Context នៅ Component ណាក៏បាន
-function Navbar() {
+## App.jsx
+
+```jsx
+import {
+  ThemeProvider,
+  useTheme,
+} from "./ThemeContext";
+
+function Content() {
   const { theme, toggleTheme } = useTheme();
-  return (
-    <nav style={{ background: theme === 'light' ? '#fff' : '#333' }}>
-      <h1>Logo</h1>
-      <button onClick={toggleTheme}>
-        {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
-      </button>
-    </nav>
-  );
-}
 
-function Page() {
-  const { theme } = useTheme();
   return (
-    <div style={{ color: theme === 'light' ? '#000' : '#fff' }}>
-      <p>Theme បច្ចុប្បន្ន: {theme}</p>
+    <div>
+      <h1>Theme: {theme}</h1>
+
+      <button onClick={toggleTheme}>
+        Toggle Theme
+      </button>
     </div>
   );
 }
 
-// ៤. Wrap App ជាមួយ Provider
 function App() {
   return (
     <ThemeProvider>
-      <Navbar />
-      <Page />
+      <Content />
     </ThemeProvider>
   );
 }
+
+export default App;
 ```
+
+## 🇰🇭 ខ្មែរ
+
+Context API មានប្រយោជន៍នៅពេល data ត្រូវ share ទៅ Component ជាច្រើន ដោយមិនចង់បញ្ជូន Props តាម Component កណ្ដាលជាច្រើនជាន់។
 
 ---
 
-## ១៣. useReducer
+# 23. useReducer
 
-**useReducer** ជាជម្រើសល្អជាង useState ពេល state logic ស្មុគស្មាញ ។
+`useReducer` is useful for complex state logic.
 
 ```jsx
-import { useReducer } from 'react';
+import { useReducer } from "react";
 
-// ១. Define initial state
 const initialState = {
-  items: [],
-  total: 0,
-  loading: false,
+  count: 0,
 };
 
-// ២. Define reducer function
-function cartReducer(state, action) {
+function reducer(state, action) {
   switch (action.type) {
-    case 'ADD_ITEM': {
-      const exists = state.items.find(i => i.id === action.item.id);
-      const items = exists
-        ? state.items.map(i =>
-            i.id === action.item.id
-              ? { ...i, qty: i.qty + 1 }
-              : i
-          )
-        : [...state.items, { ...action.item, qty: 1 }];
-
+    case "increment":
       return {
         ...state,
-        items,
-        total: state.total + action.item.price,
+        count: state.count + 1,
       };
-    }
 
-    case 'REMOVE_ITEM': {
-      const item = state.items.find(i => i.id === action.id);
+    case "decrement":
       return {
         ...state,
-        items: state.items.filter(i => i.id !== action.id),
-        total: state.total - (item ? item.price * item.qty : 0),
+        count: state.count - 1,
       };
-    }
 
-    case 'CLEAR_CART':
+    case "reset":
       return initialState;
 
     default:
-      throw new Error(`Action មិនស្គាល់: ${action.type}`);
+      throw new Error(
+        `Unknown action: ${action.type}`
+      );
   }
 }
 
-// ៣. ប្រើ useReducer
-function ShoppingCart() {
-  const [state, dispatch] = useReducer(cartReducer, initialState);
-
-  const products = [
-    { id: 1, name: "ភីហ្សា", price: 15000 },
-    { id: 2, name: "ហាំបឺហ្គ័រ", price: 12000 },
-  ];
+function App() {
+  const [state, dispatch] = useReducer(
+    reducer,
+    initialState
+  );
 
   return (
     <div>
-      <h2>📦 ហាង</h2>
-      {products.map(p => (
-        <div key={p.id}>
-          <span>{p.name} — {p.price}រៀល</span>
-          <button onClick={() => dispatch({ type: 'ADD_ITEM', item: p })}>
-            ➕ បន្ថែម
-          </button>
-        </div>
-      ))}
+      <h1>{state.count}</h1>
 
-      <h2>🛒 កន្ត្រក ({state.items.length} ប្រភេទ)</h2>
-      {state.items.map(item => (
-        <div key={item.id}>
-          {item.name} x{item.qty}
-          <button onClick={() => dispatch({ type: 'REMOVE_ITEM', id: item.id })}>
-            🗑️
-          </button>
-        </div>
-      ))}
+      <button
+        onClick={() => dispatch({ type: "increment" })}
+      >
+        +
+      </button>
 
-      <p>💰 សរុប: {state.total.toLocaleString()}រៀល</p>
-      <button onClick={() => dispatch({ type: 'CLEAR_CART' })}>
-        🧹 លុបទាំងអស់
+      <button
+        onClick={() => dispatch({ type: "decrement" })}
+      >
+        -
+      </button>
+
+      <button
+        onClick={() => dispatch({ type: "reset" })}
+      >
+        Reset
       </button>
     </div>
   );
 }
+
+export default App;
 ```
 
 ---
 
-## ១៤. Custom Hooks
+# 24. React Router
 
-**Custom Hooks** ជា function ដែលចាប់ផ្តើមដោយ `use` ហើយ reuse logic បាន ។
+For applications with multiple pages, React Router is commonly used.
 
-### 🪝 useLocalStorage
-
-```jsx
-import { useState, useEffect } from 'react';
-
-function useLocalStorage(key, initialValue) {
-  const [value, setValue] = useState(() => {
-    try {
-      const stored = localStorage.getItem(key);
-      return stored ? JSON.parse(stored) : initialValue;
-    } catch {
-      return initialValue;
-    }
-  });
-
-  useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(value));
-  }, [key, value]);
-
-  return [value, setValue];
-}
-
-// ការប្រើ
-function Settings() {
-  const [theme, setTheme] = useLocalStorage('theme', 'light');
-  const [language, setLanguage] = useLocalStorage('lang', 'km');
-
-  return (
-    <div>
-      <button onClick={() => setTheme(t => t === 'light' ? 'dark' : 'light')}>
-        Theme: {theme}
-      </button>
-      <button onClick={() => setLanguage(l => l === 'km' ? 'en' : 'km')}>
-        ភាសា: {language}
-      </button>
-    </div>
-  );
-}
-```
-
-### 🌐 useFetch
-
-```jsx
-import { useState, useEffect, useCallback } from 'react';
-
-function useFetch(url) {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  const fetchData = useCallback(async () => {
-    const controller = new AbortController();
-
-    try {
-      setLoading(true);
-      setError(null);
-
-      const res = await fetch(url, { signal: controller.signal });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-
-      const json = await res.json();
-      setData(json);
-    } catch (err) {
-      if (err.name !== 'AbortError') setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-
-    return () => controller.abort();
-  }, [url]);
-
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
-
-  return { data, loading, error, refetch: fetchData };
-}
-
-// ការប្រើ
-function PostsList() {
-  const { data, loading, error, refetch } = useFetch(
-    'https://jsonplaceholder.typicode.com/posts?_limit=5'
-  );
-
-  if (loading) return <p>⏳ Loading...</p>;
-  if (error)   return <p>❌ {error} <button onClick={refetch}>ព្យាយាមម្ដងទៀត</button></p>;
-
-  return (
-    <ul>
-      {data?.map(post => <li key={post.id}>{post.title}</li>)}
-    </ul>
-  );
-}
-```
-
-### ⏱️ useDebounce
-
-```jsx
-import { useState, useEffect } from 'react';
-
-function useDebounce(value, delay = 500) {
-  const [debouncedValue, setDebouncedValue] = useState(value);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setDebouncedValue(value);
-    }, delay);
-
-    return () => clearTimeout(timer); // cancel ប្រសិនបើ value ផ្លាស់ប្ដូរ
-  }, [value, delay]);
-
-  return debouncedValue;
-}
-
-// ការប្រើ — Search ពី API ដោយ delay
-function SearchBar() {
-  const [query, setQuery] = useState('');
-  const debouncedQuery = useDebounce(query, 300);
-
-  useEffect(() => {
-    if (debouncedQuery) {
-      console.log(`🔍 Search: ${debouncedQuery}`);
-      // fetch search results...
-    }
-  }, [debouncedQuery]);
-
-  return (
-    <input
-      value={query}
-      onChange={(e) => setQuery(e.target.value)}
-      placeholder="ស្វែងរក..."
-    />
-  );
-}
-```
-
----
-
-## ១៥. useMemo និង useCallback
-
-ប្រើ Hooks ទាំងនេះ ដើម្បី **optimize performance** ។
-
-### 🧮 useMemo — Cache computation result
-
-```jsx
-import { useState, useMemo } from 'react';
-
-function ExpensiveCalculation({ numbers, filter }) {
-  const [count, setCount] = useState(0);
-
-  // ✅ useMemo — compute ម្តងប៉ុណ្ណោះ ពេល numbers ឬ filter ផ្លាស់ប្ដូរ
-  const filteredNumbers = useMemo(() => {
-    console.log("🔄 Computing...");
-    return numbers
-      .filter(n => n > filter)
-      .sort((a, b) => a - b);
-  }, [numbers, filter]); // dependencies
-
-  return (
-    <div>
-      <p>លទ្ធផល: {filteredNumbers.join(', ')}</p>
-      {/* re-render count ប៉ុន្តែ computation មិនរត់ */}
-      <button onClick={() => setCount(c => c + 1)}>Rerender ({count})</button>
-    </div>
-  );
-}
-```
-
-### 🔁 useCallback — Cache function reference
-
-```jsx
-import { useState, useCallback, memo } from 'react';
-
-// React.memo — skip re-render ប្រសិនបើ props មិនផ្លាស់ប្ដូរ
-const ExpensiveChild = memo(function ExpensiveChild({ onClick }) {
-  console.log("Child renders");
-  return <button onClick={onClick}>Child Button</button>;
-});
-
-function Parent() {
-  const [count, setCount] = useState(0);
-  const [text, setText] = useState('');
-
-  // ✅ useCallback — function reference ដដែល លុះត្រា count ផ្លាស់ប្ដូរ
-  const handleClick = useCallback(() => {
-    setCount(c => c + 1);
-  }, []); // stable reference
-
-  return (
-    <div>
-      <input value={text} onChange={(e) => setText(e.target.value)} />
-      <p>Count: {count}</p>
-      {/* ExpensiveChild មិន re-render ពេល text ផ្លាស់ប្ដូរ */}
-      <ExpensiveChild onClick={handleClick} />
-    </div>
-  );
-}
-```
-
-> **💡 ចំណាំ:** កុំ overuse useMemo/useCallback — ប្រើតែពេល performance ពិតជាជាបញ្ហា ។
-
----
-
-## ១៦. React Router
-
-**React Router v6+** ដើម្បីបង្កើត navigation ។
+Install:
 
 ```bash
 npm install react-router-dom
 ```
+
+## App.jsx
 
 ```jsx
 import {
@@ -1157,381 +1232,1410 @@ import {
   Routes,
   Route,
   Link,
-  NavLink,
-  useNavigate,
-  useParams,
-  useSearchParams,
-} from 'react-router-dom';
+} from "react-router-dom";
 
-// Pages
-function Home()     { return <h1>🏠 ទំព័រដើម</h1>; }
-function About()    { return <h1>ℹ️ អំពីយើង</h1>; }
-function NotFound() { return <h1>❌ 404 - រកមិនឃើញ</h1>; }
-
-// Dynamic route — /users/:id
-function UserDetail() {
-  const { id } = useParams();
-  return <h1>👤 User #{id}</h1>;
+function Home() {
+  return <h1>Home Page</h1>;
 }
 
-// Search params — /search?q=react
-function Search() {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const query = searchParams.get('q') || '';
-
-  return (
-    <div>
-      <input
-        value={query}
-        onChange={(e) => setSearchParams({ q: e.target.value })}
-      />
-      <p>ស្វែងរក: {query}</p>
-    </div>
-  );
+function About() {
+  return <h1>About Page</h1>;
 }
 
-// Navigation
-function Navbar() {
-  const navigate = useNavigate();
-
-  return (
-    <nav>
-      <Link to="/">ដើម</Link>
-      <Link to="/about">អំពី</Link>
-      {/* NavLink — add active class automatically */}
-      <NavLink to="/search" className={({ isActive }) => isActive ? 'active' : ''}>
-        ស្វែងរក
-      </NavLink>
-      <button onClick={() => navigate('/about')}>Programmatic Nav</button>
-    </nav>
-  );
+function Contact() {
+  return <h1>Contact Page</h1>;
 }
 
-// App Router setup
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
+      <nav>
+        <Link to="/">Home</Link>{" "}
+        <Link to="/about">About</Link>{" "}
+        <Link to="/contact">Contact</Link>
+      </nav>
+
       <Routes>
-        <Route path="/"           element={<Home />} />
-        <Route path="/about"      element={<About />} />
-        <Route path="/users/:id"  element={<UserDetail />} />
-        <Route path="/search"     element={<Search />} />
-        <Route path="*"           element={<NotFound />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>
   );
 }
+
+export default App;
 ```
 
 ---
 
-## ១៧. Fetching Data (API)
+# 25. Authentication Example
 
-### 🔷 ជាមួយ Fetch API + Custom Hook
-
-```jsx
-// hooks/useApi.js
-import { useState, useCallback } from 'react';
-
-export function useApi() {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-
-  const request = useCallback(async (url, options = {}) => {
-    try {
-      setLoading(true);
-      setError(null);
-
-      const res = await fetch(url, {
-        headers: { 'Content-Type': 'application/json' },
-        ...options,
-      });
-
-      if (!res.ok) throw new Error(`Error ${res.status}`);
-      return await res.json();
-    } catch (err) {
-      setError(err.message);
-      throw err;
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
-  return { loading, error, request };
-}
-
-// ការប្រើ
-function CreatePost() {
-  const { loading, error, request } = useApi();
-  const [title, setTitle] = useState('');
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const post = await request('https://jsonplaceholder.typicode.com/posts', {
-        method: 'POST',
-        body: JSON.stringify({ title, userId: 1 }),
-      });
-      alert(`✅ បានបង្កើត post #${post.id}`);
-    } catch {
-      // error handled by hook
-    }
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <input value={title} onChange={e => setTitle(e.target.value)} />
-      <button type="submit" disabled={loading}>
-        {loading ? '⏳ Loading...' : '📤 Submit'}
-      </button>
-      {error && <p style={{ color: 'red' }}>❌ {error}</p>}
-    </form>
-  );
-}
-```
-
----
-
-## ១៨. Error Boundaries
-
-**Error Boundaries** ចាប់ JavaScript errors ហើយបង្ហាញ fallback UI ។
+A simple client-side authentication state can look like this:
 
 ```jsx
-import { Component } from 'react';
+import { useState } from "react";
 
-// ⚠️ Error Boundaries ត្រូវប្រើ Class Component
-class ErrorBoundary extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { hasError: false, error: null };
-  }
-
-  // ចាប់ error ហើយ update state
-  static getDerivedStateFromError(error) {
-    return { hasError: true, error };
-  }
-
-  // log error
-  componentDidCatch(error, errorInfo) {
-    console.error('Error caught:', error, errorInfo);
-    // ផ្ញើ error ទៅ logging service...
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return (
-        <div style={{ padding: 20, border: '1px solid red', borderRadius: 8 }}>
-          <h2>⚠️ មានបញ្ហាបច្ចេកទេស</h2>
-          <p>{this.state.error?.message}</p>
-          <button onClick={() => this.setState({ hasError: false, error: null })}>
-            🔄 ព្យាយាមម្ដងទៀត
-          </button>
-        </div>
-      );
-    }
-
-    return this.props.children;
-  }
-}
-
-// ការប្រើ
 function App() {
+  const [user, setUser] = useState(null);
+
+  function login() {
+    setUser({
+      id: 1,
+      name: "Heng",
+    });
+  }
+
+  function logout() {
+    setUser(null);
+  }
+
+  if (!user) {
+    return (
+      <div>
+        <h1>Please Login</h1>
+
+        <button onClick={login}>
+          Login
+        </button>
+      </div>
+    );
+  }
+
   return (
-    <ErrorBoundary>
-      <Header />
-      <ErrorBoundary>
-        {/* Component ក្នុង nested boundary */}
-        <RiskyComponent />
-      </ErrorBoundary>
-      <Footer />
-    </ErrorBoundary>
-  );
-}
-```
+    <div>
+      <h1>
+        Welcome, {user.name}
+      </h1>
 
----
-
-## ១៩. Performance Optimization
-
-### 🚀 React.memo
-
-```jsx
-import { memo } from 'react';
-
-// ✅ Component នឹង re-render លុះណាតែ props ផ្លាស់ប្ដូរ
-const UserCard = memo(function UserCard({ user, onSelect }) {
-  console.log(`Rendering: ${user.name}`);
-  return (
-    <div onClick={() => onSelect(user.id)}>
-      <h3>{user.name}</h3>
-      <p>{user.email}</p>
+      <button onClick={logout}>
+        Logout
+      </button>
     </div>
   );
-});
+}
 
-// Custom comparison function
-const UserCard = memo(
-  function UserCard({ user }) { ... },
-  (prevProps, nextProps) => prevProps.user.id === nextProps.user.id
-);
+export default App;
 ```
 
-### 💤 Lazy Loading
+> ⚠️ This is only UI state. Real authentication should be implemented with a secure backend/session/token strategy.
+
+---
+
+# 26. Local Storage
+
+You can persist non-sensitive client-side data using `localStorage`.
 
 ```jsx
-import { lazy, Suspense } from 'react';
+import { useEffect, useState } from "react";
 
-// ✅ Load component ពេលត្រូវការប៉ុណ្ណោះ (code splitting)
-const HeavyChart     = lazy(() => import('./HeavyChart'));
-const AdminDashboard = lazy(() => import('./AdminDashboard'));
+function App() {
+  const [name, setName] = useState(() => {
+    return localStorage.getItem("name") || "";
+  });
+
+  useEffect(() => {
+    if (name) {
+      localStorage.setItem("name", name);
+    } else {
+      localStorage.removeItem("name");
+    }
+  }, [name]);
+
+  return (
+    <div>
+      <input
+        value={name}
+        onChange={(event) =>
+          setName(event.target.value)
+        }
+        placeholder="Enter name"
+      />
+
+      <h1>Hello {name}</h1>
+    </div>
+  );
+}
+
+export default App;
+```
+
+## Security warning
+
+Do not store highly sensitive secrets in `localStorage`.
+
+For example, do not blindly store:
+
+```text
+Passwords
+Private keys
+Highly sensitive credentials
+```
+
+---
+
+# 27. TypeScript with React
+
+TypeScript makes React applications easier to type safely.
+
+Example:
+
+```tsx
+type UserProps = {
+  name: string;
+  age: number;
+};
+
+function User({ name, age }: UserProps) {
+  return (
+    <div>
+      <h2>{name}</h2>
+      <p>{age}</p>
+    </div>
+  );
+}
+
+export default User;
+```
+
+Use:
+
+```tsx
+<User name="Heng" age={20} />
+```
+
+---
+
+## Typed State
+
+```tsx
+import { useState } from "react";
+
+type User = {
+  id: number;
+  name: string;
+};
+
+function App() {
+  const [user, setUser] = useState<User | null>(null);
+
+  function login() {
+    setUser({
+      id: 1,
+      name: "Heng",
+    });
+  }
+
+  return (
+    <div>
+      {user ? (
+        <h1>{user.name}</h1>
+      ) : (
+        <button onClick={login}>
+          Login
+        </button>
+      )}
+    </div>
+  );
+}
+
+export default App;
+```
+
+---
+
+# 28. Error Handling
+
+API operations should handle errors.
+
+```jsx
+import { useEffect, useState } from "react";
+
+function App() {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/users/1"
+        );
+
+        if (!response.ok) {
+          throw new Error(
+            `HTTP error: ${response.status}`
+          );
+        }
+
+        const result = await response.json();
+
+        setData(result);
+      } catch (error) {
+        setError(error.message);
+      }
+    }
+
+    fetchData();
+  }, []);
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
+
+  if (!data) {
+    return <p>Loading...</p>;
+  }
+
+  return (
+    <div>
+      <h1>{data.name}</h1>
+      <p>{data.email}</p>
+    </div>
+  );
+}
+
+export default App;
+```
+
+---
+
+# 29. Performance Optimization
+
+Common optimization techniques:
+
+```text
+React.memo
+useMemo
+useCallback
+Code Splitting
+Lazy Loading
+Virtualization
+Avoid unnecessary renders
+Optimize images
+Reduce network requests
+Cache server data
+```
+
+## Important principle
+
+Do not optimize everything prematurely.
+
+First:
+
+```text
+Measure
+↓
+Find bottleneck
+↓
+Optimize
+↓
+Measure again
+```
+
+---
+
+# 30. Lazy Loading
+
+React supports lazy loading components.
+
+```jsx
+import {
+  lazy,
+  Suspense,
+} from "react";
+
+const About = lazy(() => import("./About"));
 
 function App() {
   return (
-    <Suspense fallback={<div>⏳ Loading component...</div>}>
-      <HeavyChart />
+    <Suspense fallback={<p>Loading...</p>}>
+      <About />
     </Suspense>
   );
 }
+
+export default App;
 ```
 
-### 🖼️ Virtualization (Lists ធំ)
+This can reduce the initial JavaScript required to load a page.
 
-```bash
-npm install react-window
-```
+---
+
+# 31. Suspense
+
+`Suspense` provides fallback UI while a suspended component is loading.
 
 ```jsx
-import { FixedSizeList } from 'react-window';
+import {
+  lazy,
+  Suspense,
+} from "react";
 
-// ✅ render តែ rows ដែល visible ប៉ុណ្ណោះ (ល្អសម្រាប់ list ១០,០០០+ items)
-function HugeList({ items }) {
-  const Row = ({ index, style }) => (
-    <div style={style}>{items[index].name}</div>
-  );
+const Dashboard = lazy(
+  () => import("./Dashboard")
+);
 
+function App() {
   return (
-    <FixedSizeList
-      height={400}
-      width="100%"
-      itemCount={items.length}
-      itemSize={50}
-    >
-      {Row}
-    </FixedSizeList>
+    <Suspense fallback={<h1>Loading...</h1>}>
+      <Dashboard />
+    </Suspense>
   );
 }
+
+export default App;
 ```
 
 ---
 
-## ២០. Best Practices
+# 32. React.memo
 
-### ✅ ច្បាប់ Code ល្អ
+`React.memo` can prevent unnecessary child renders when props have not changed.
+
+## User.jsx
 
 ```jsx
-// ✅ ១. ឈ្មោះ Component — PascalCase
-function UserProfile() { ... }
+import { memo } from "react";
 
-// ✅ ២. ឈ្មោះ Hook — camelCase ចាប់ផ្តើម use
-function useAuth() { ... }
+function User({ name }) {
+  console.log("User rendered");
 
-// ✅ ៣. ឈ្មោះ Event Handler — handle + EventName
-const handleSubmit = () => { ... };
-const handleInputChange = () => { ... };
+  return <h2>{name}</h2>;
+}
 
-// ✅ ៤. ចែក Component ឱ្យតូច (Single Responsibility)
-// ❌ មិនល្អ — Component ធំ ១ ដែលធ្វើអ្វីៗទាំងអស់
-function BigPage() { /* 500+ lines */ }
+export default memo(User);
+```
 
-// ✅ ល្អ — ចែកជា components តូចៗ
-function Page() {
+## App.jsx
+
+```jsx
+import { useState } from "react";
+import User from "./User";
+
+function App() {
+  const [count, setCount] = useState(0);
+
   return (
-    <>
-      <PageHeader />
-      <PageContent />
-      <PageFooter />
-    </>
+    <div>
+      <User name="Heng" />
+
+      <h1>{count}</h1>
+
+      <button
+        onClick={() => setCount(count + 1)}
+      >
+        Increase
+      </button>
+    </div>
   );
 }
 
-// ✅ ៥. Custom Hooks ដើម្បី reuse logic
-function useForm(initialValues) { ... }
-function useAuth() { ... }
-
-// ✅ ៦. Constants ខ្ពស់ (UPPER_SNAKE_CASE)
-const MAX_RETRY_COUNT = 3;
-const API_BASE_URL = 'https://api.example.com';
-
-// ✅ ៧. Early return ដើម្បីកាត់ nesting
-function UserPage({ userId }) {
-  const { user, loading, error } = useFetch(`/api/users/${userId}`);
-
-  if (loading) return <Spinner />;
-  if (error)   return <ErrorMessage error={error} />;
-  if (!user)   return <NotFound />;
-
-  return <UserDetails user={user} />;
-}
+export default App;
 ```
 
-### 📁 Project Structure (ណែនាំ)
+---
 
-```
+# 33. Component Architecture
+
+A clean React application can separate components by responsibility.
+
+Example:
+
+```text
 src/
-├── components/          ← Reusable components
-│   ├── Button/
-│   │   ├── Button.jsx
-│   │   ├── Button.module.css
-│   │   └── index.js
-│   └── Modal/
-├── pages/               ← Page components (React Router)
+│
+├── components/
+│   ├── Button.jsx
+│   ├── Input.jsx
+│   ├── Navbar.jsx
+│   └── Modal.jsx
+│
+├── pages/
 │   ├── Home.jsx
-│   └── About.jsx
-├── hooks/               ← Custom hooks
+│   ├── Login.jsx
+│   ├── Dashboard.jsx
+│   └── Profile.jsx
+│
+├── hooks/
 │   ├── useAuth.js
 │   └── useFetch.js
-├── context/             ← Context providers
+│
+├── context/
 │   └── AuthContext.jsx
-├── services/            ← API calls
+│
+├── services/
 │   └── api.js
-├── utils/               ← Helper functions
+│
+├── utils/
 │   └── formatDate.js
-├── constants/           ← Constants
-│   └── routes.js
-└── App.jsx
+│
+├── App.jsx
+├── main.jsx
+└── index.css
 ```
 
 ---
 
-## 🎓 សង្ខេបចំណេះដឹង
+# 34. Advanced Project Structure
 
-| Topic | Hook/Concept | ការប្រើ |
-|-------|-------------|---------|
-| Local state | `useState` | ទំនាក់ទំនងរវាង UI state |
-| Side effects | `useEffect` | Fetch, timer, subscriptions |
-| DOM access | `useRef` | Focus, scroll, mutable values |
-| Global state | `useContext` | Theme, auth, language |
-| Complex state | `useReducer` | Shopping cart, forms |
-| Performance | `useMemo`, `useCallback`, `memo` | Expensive calculations |
-| Routing | React Router | Navigation, URL params |
-| Code splitting | `lazy`, `Suspense` | Load pages on demand |
+For a larger application, feature-based organization can be useful.
+
+```text
+src/
+│
+├── app/
+│   ├── App.jsx
+│   └── router.jsx
+│
+├── features/
+│   ├── auth/
+│   │   ├── components/
+│   │   ├── hooks/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   └── auth.js
+│   │
+│   ├── users/
+│   │   ├── components/
+│   │   ├── hooks/
+│   │   ├── pages/
+│   │   └── services/
+│   │
+│   └── products/
+│       ├── components/
+│       ├── hooks/
+│       ├── pages/
+│       └── services/
+│
+├── components/
+│   ├── Button.jsx
+│   ├── Modal.jsx
+│   └── Spinner.jsx
+│
+├── hooks/
+│
+├── lib/
+│
+├── services/
+│
+├── utils/
+│
+├── assets/
+│
+└── main.jsx
+```
+
+## 🇰🇭 ខ្មែរ
+
+Project តូចអាចប្រើ structure ធម្មតា។
+
+Project ធំគួររៀបចំតាម **feature/domain** ដើម្បីងាយ maintain និង scale។
 
 ---
 
-## 📚 ធនធានបន្ថែម
+# 35. Environment Variables
 
-- 📖 [React Official Docs](https://react.dev) — ឯកសារផ្លូវការ
-- 🎮 [React Tutorial](https://react.dev/learn) — Tutorial ជាជំហានៗ
-- 🔧 [React DevTools](https://react.dev/learn/react-developer-tools) — Debug tool
-- 📦 [npm Packages](https://npmjs.com) — Libraries
+With Vite, client-exposed environment variables use the `VITE_` prefix.
+
+Example:
+
+```text
+.env
+```
+
+```env
+VITE_API_URL=https://api.example.com
+```
+
+Use it:
+
+```jsx
+const apiUrl = import.meta.env.VITE_API_URL;
+
+console.log(apiUrl);
+```
+
+## Important security rule
+
+Anything exposed to frontend JavaScript should be considered public.
+
+Do NOT put private server secrets into:
+
+```env
+VITE_SECRET_KEY=...
+```
+
+because the value can be exposed to users.
 
 ---
 
-<div align="center">
+# 36. Security
 
-**🇰🇭 បង្កើតដោយ ❤️ សម្រាប់ Developer ខ្មែរ**
+Important React security practices:
 
-*React — Learn once, write anywhere*
+## 1. Never trust user input
 
-</div>
+Bad:
+
+```jsx
+<div
+  dangerouslySetInnerHTML={{
+    __html: userInput,
+  }}
+/>
+```
+
+Avoid this unless you fully understand and sanitize the HTML.
+
+Normally prefer:
+
+```jsx
+<div>{userInput}</div>
+```
+
+React escapes normal text rendering.
+
+---
+
+## 2. Protect authentication on the server
+
+Frontend route protection alone is not security.
+
+The backend must verify authorization.
+
+Example concept:
+
+```text
+React
+  ↓
+API Request
+  ↓
+Backend Authentication
+  ↓
+Backend Authorization
+  ↓
+Database
+```
+
+---
+
+# 37. Testing
+
+A React application should be tested.
+
+Typical testing categories:
+
+```text
+Unit Tests
+Component Tests
+Integration Tests
+End-to-End Tests
+```
+
+Example component:
+
+```jsx
+function Button({ onClick }) {
+  return (
+    <button onClick={onClick}>
+      Click
+    </button>
+  );
+}
+
+export default Button;
+```
+
+The important idea is to test behavior:
+
+```text
+Render component
+↓
+Find button
+↓
+Click button
+↓
+Verify expected result
+```
+
+---
+
+# 38. Production Build
+
+Build the application:
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+Typical flow:
+
+```text
+Development
+    ↓
+npm run build
+    ↓
+Production files
+    ↓
+Deploy
+```
+
+---
+
+# 39. Best Practices
+
+## 1. Use small components
+
+Good:
+
+```text
+Navbar
+Sidebar
+UserCard
+ProductCard
+Button
+Modal
+```
+
+Avoid one giant component.
+
+---
+
+## 2. Keep components focused
+
+A component should have a clear responsibility.
+
+---
+
+## 3. Use meaningful names
+
+Good:
+
+```jsx
+const userProfile = ...
+```
+
+Bad:
+
+```jsx
+const x = ...
+```
+
+---
+
+## 4. Avoid duplicated code
+
+Create reusable components and functions.
+
+---
+
+## 5. Keep state as local as possible
+
+Do not put every piece of state into global state.
+
+---
+
+## 6. Use stable keys
+
+Good:
+
+```jsx
+key={user.id}
+```
+
+---
+
+## 7. Handle loading and errors
+
+API UI should usually handle:
+
+```text
+Loading
+Success
+Error
+Empty
+```
+
+---
+
+## 8. Keep API logic separate
+
+For larger applications, consider:
+
+```text
+components/
+services/
+hooks/
+pages/
+```
+
+---
+
+## 9. Do not overuse hooks
+
+Do not add:
+
+```text
+useMemo
+useCallback
+useEffect
+```
+
+unless they solve a real problem.
+
+---
+
+## 10. Keep secrets on the server
+
+Frontend code is visible to users.
+
+---
+
+# 40. Complete React Example
+
+Here is a small but complete React application demonstrating:
+
+* Components
+* Props
+* State
+* Events
+* Forms
+* Lists
+* Filtering
+* Delete
+* Add
+* Conditional rendering
+
+## App.jsx
+
+```jsx
+import { useState } from "react";
+
+function UserForm({ onAdd }) {
+  const [name, setName] = useState("");
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    const trimmedName = name.trim();
+
+    if (!trimmedName) {
+      return;
+    }
+
+    onAdd(trimmedName);
+    setName("");
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        value={name}
+        onChange={(event) =>
+          setName(event.target.value)
+        }
+        placeholder="Enter user name"
+      />
+
+      <button type="submit">
+        Add User
+      </button>
+    </form>
+  );
+}
+
+function UserList({ users, onDelete }) {
+  if (users.length === 0) {
+    return <p>No users found.</p>;
+  }
+
+  return (
+    <ul>
+      {users.map((user) => (
+        <li key={user.id}>
+          {user.name}
+
+          <button
+            onClick={() => onDelete(user.id)}
+          >
+            Delete
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function App() {
+  const [users, setUsers] = useState([
+    {
+      id: 1,
+      name: "Heng",
+    },
+    {
+      id: 2,
+      name: "Dara",
+    },
+    {
+      id: 3,
+      name: "Sokha",
+    },
+  ]);
+
+  const [search, setSearch] = useState("");
+
+  function addUser(name) {
+    const newUser = {
+      id: crypto.randomUUID(),
+      name,
+    };
+
+    setUsers((currentUsers) => [
+      ...currentUsers,
+      newUser,
+    ]);
+  }
+
+  function deleteUser(id) {
+    setUsers((currentUsers) =>
+      currentUsers.filter(
+        (user) => user.id !== id
+      )
+    );
+  }
+
+  const filteredUsers = users.filter((user) =>
+    user.name
+      .toLowerCase()
+      .includes(search.toLowerCase())
+  );
+
+  return (
+    <main>
+      <h1>User Management</h1>
+
+      <UserForm onAdd={addUser} />
+
+      <hr />
+
+      <input
+        value={search}
+        onChange={(event) =>
+          setSearch(event.target.value)
+        }
+        placeholder="Search users"
+      />
+
+      <p>
+        Total Users: {filteredUsers.length}
+      </p>
+
+      <UserList
+        users={filteredUsers}
+        onDelete={deleteUser}
+      />
+    </main>
+  );
+}
+
+export default App;
+```
+
+---
+
+# 41. Learning Roadmap
+
+A recommended React learning order:
+
+```text
+                    REACT
+                      │
+                      ▼
+              ┌───────────────┐
+              │ JavaScript    │
+              │ ES6+          │
+              └───────┬───────┘
+                      │
+                      ▼
+              ┌───────────────┐
+              │ JSX           │
+              └───────┬───────┘
+                      │
+                      ▼
+              ┌───────────────┐
+              │ Components    │
+              └───────┬───────┘
+                      │
+                      ▼
+              ┌───────────────┐
+              │ Props         │
+              └───────┬───────┘
+                      │
+                      ▼
+              ┌───────────────┐
+              │ State         │
+              └───────┬───────┘
+                      │
+                      ▼
+              ┌───────────────┐
+              │ Events        │
+              └───────┬───────┘
+                      │
+                      ▼
+              ┌───────────────┐
+              │ Forms         │
+              └───────┬───────┘
+                      │
+                      ▼
+              ┌───────────────┐
+              │ useEffect     │
+              └───────┬───────┘
+                      │
+                      ▼
+              ┌───────────────┐
+              │ API / Fetch   │
+              └───────┬───────┘
+                      │
+                      ▼
+              ┌───────────────┐
+              │ React Router  │
+              └───────┬───────┘
+                      │
+                      ▼
+              ┌───────────────┐
+              │ Context       │
+              └───────┬───────┘
+                      │
+                      ▼
+              ┌───────────────┐
+              │ Custom Hooks  │
+              └───────┬───────┘
+                      │
+                      ▼
+              ┌───────────────┐
+              │ useReducer    │
+              └───────┬───────┘
+                      │
+                      ▼
+              ┌───────────────┐
+              │ TypeScript    │
+              └───────┬───────┘
+                      │
+                      ▼
+              ┌───────────────┐
+              │ Performance   │
+              └───────┬───────┘
+                      │
+                      ▼
+              ┌───────────────┐
+              │ Testing       │
+              └───────┬───────┘
+                      │
+                      ▼
+              ┌───────────────┐
+              │ Production    │
+              └───────────────┘
+```
+
+---
+
+# 🎯 React Skill Levels
+
+## 🟢 Beginner
+
+Learn:
+
+```text
+JavaScript
+↓
+JSX
+↓
+Components
+↓
+Props
+↓
+State
+↓
+Events
+↓
+Conditional Rendering
+↓
+Lists
+↓
+Forms
+```
+
+---
+
+## 🟡 Intermediate
+
+Learn:
+
+```text
+useEffect
+↓
+API Requests
+↓
+Custom Hooks
+↓
+Context
+↓
+useReducer
+↓
+React Router
+↓
+Local Storage
+↓
+Authentication
+```
+
+---
+
+## 🔴 Advanced
+
+Learn:
+
+```text
+TypeScript
+↓
+Architecture
+↓
+Performance
+↓
+Lazy Loading
+↓
+Suspense
+↓
+Testing
+↓
+Security
+↓
+Production Deployment
+↓
+Large-scale Application Architecture
+```
+
+---
+
+# 🧠 React Mental Model
+
+A useful way to think about React is:
+
+```text
+STATE
+  ↓
+RENDER
+  ↓
+USER INTERACTION
+  ↓
+STATE UPDATE
+  ↓
+RENDER AGAIN
+```
+
+For example:
+
+```text
+count = 0
+   ↓
+UI shows 0
+   ↓
+User clicks button
+   ↓
+setCount(1)
+   ↓
+React renders again
+   ↓
+UI shows 1
+```
+
+---
+
+# 🔥 Important React Concepts
+
+| Concept      | Purpose                               |
+| ------------ | ------------------------------------- |
+| JSX          | Write UI syntax                       |
+| Component    | Reusable UI                           |
+| Props        | Parent → Child data                   |
+| State        | Component data that changes           |
+| useState     | Manage state                          |
+| useEffect    | Synchronize with external systems     |
+| useRef       | Keep mutable values / DOM references  |
+| useMemo      | Cache calculated values               |
+| useCallback  | Cache function references             |
+| Context      | Share values through a component tree |
+| useReducer   | Manage complex state transitions      |
+| Custom Hook  | Reuse stateful logic                  |
+| React Router | Client-side routing                   |
+| Suspense     | Coordinate loading UI                 |
+| lazy         | Lazy-load components                  |
+| memo         | Skip unnecessary child renders        |
+
+---
+
+# 🏆 Recommended React Project Progression
+
+Build projects in this order:
+
+## Project 1 — Counter
+
+Learn:
+
+```text
+useState
+Events
+Components
+```
+
+## Project 2 — Todo App
+
+Learn:
+
+```text
+State
+Forms
+Lists
+Props
+Delete
+Update
+```
+
+## Project 3 — Weather App
+
+Learn:
+
+```text
+API
+fetch
+useEffect
+Loading
+Error
+```
+
+## Project 4 — Blog
+
+Learn:
+
+```text
+Routing
+API
+Forms
+CRUD
+Reusable Components
+```
+
+## Project 5 — E-Commerce
+
+Learn:
+
+```text
+Products
+Cart
+Authentication
+Routing
+API
+State Management
+```
+
+## Project 6 — Admin Dashboard
+
+Learn:
+
+```text
+Authentication
+Authorization
+Charts
+Tables
+Pagination
+Filtering
+Search
+API
+Reusable Components
+```
+
+## Project 7 — Full Stack Application
+
+Learn:
+
+```text
+React
+   ↓
+REST API
+   ↓
+Backend
+   ↓
+Database
+```
+
+Example:
+
+```text
+React
+  │
+  │ HTTP
+  ▼
+Express / Spring Boot / Laravel
+  │
+  │ SQL / ORM
+  ▼
+PostgreSQL / MySQL
+```
+
+---
+
+# 📝 Quick Reference
+
+## Create React project
+
+```bash
+npm create vite@latest my-app
+cd my-app
+npm install
+npm run dev
+```
+
+## Install React Router
+
+```bash
+npm install react-router-dom
+```
+
+## Run development server
+
+```bash
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+## Preview production build
+
+```bash
+npm run preview
+```
+
+---
+
+# 🇰🇭 សង្ខេបជាភាសាខ្មែរ
+
+React គឺជា library សម្រាប់បង្កើត UI ដោយប្រើ Component។
+
+លំដាប់ដែលគួររៀន៖
+
+```text
+JavaScript
+   ↓
+JSX
+   ↓
+Component
+   ↓
+Props
+   ↓
+useState
+   ↓
+Events
+   ↓
+Forms
+   ↓
+useEffect
+   ↓
+API
+   ↓
+Router
+   ↓
+Context
+   ↓
+Custom Hooks
+   ↓
+useReducer
+   ↓
+TypeScript
+   ↓
+Performance
+   ↓
+Testing
+   ↓
+Production
+```
+
+ចំណុចសំខាន់បំផុតគឺកុំរៀនតែ syntax។ ត្រូវបង្កើត project ពិតប្រាកដ ដើម្បីយល់ពីរបៀបដែល React application ដំណើរការ។
+
+---
+
+# 🚀 Final Goal
+
+After completing this guide, you should be able to build applications such as:
+
+```text
+✅ Todo Application
+✅ Blog
+✅ Dashboard
+✅ Admin Panel
+✅ E-Commerce
+✅ Authentication System
+✅ CRUD Application
+✅ API-based Application
+✅ Large React Application
+```
+
+A strong React developer should understand:
+
+```text
+UI
++
+Components
++
+State
++
+Data Flow
++
+API
++
+Routing
++
+Authentication
++
+Architecture
++
+Performance
++
+Testing
++
+Security
+```
+
+---
+
+# 📌 Conclusion
+
+React is easiest to understand when you think in terms of:
+
+```text
+Components
+     +
+Props
+     +
+State
+     +
+Events
+     +
+Data
+     ↓
+User Interface
+```
+
+Start small, build projects, and gradually move toward larger applications.
+
+**Happy Coding! 🚀**
